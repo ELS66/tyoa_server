@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="tyoa@localhost" uuid="cca1de9c-ade1-4a89-9cde-b28f67469192">
+    <data-source source="LOCAL" name="tyoa@47.95.248.230" uuid="0f5349ad-3c25-4b54-aaae-c7744708fcfd">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/tyoa</jdbc-url>
+      <jdbc-url>jdbc:mysql://47.95.248.230:3306/tyoa</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="serverTimezone" value="UTC" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="tyoa@47.95.248.230 [2]" uuid="a470bf82-57f7-4b29-98f5-c5adf5e0ec61">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://47.95.248.230:3306/tyoa</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <driver-properties>
         <property name="serverTimezone" value="UTC" />

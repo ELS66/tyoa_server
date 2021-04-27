@@ -21,10 +21,18 @@ public class MessServlet extends HttpServlet {
         String result = "false";
         String num = req.getHeader("num");
         int n = Integer.parseInt(num);
-        System.out.println(n);
+        int id = Integer.parseInt(req.getHeader("id"));
         UserDaoImal userDaoImal = new UserDaoImal();
-        List<MessItem> list = new ArrayList<>();
-        list = userDaoImal.queryMess(n);
+        int root = userDaoImal.queryByUserid(id).getRoot();
+        List<MessItem> list;
+        if (root == 1) {
+            list = userDaoImal.queryMessList1(id,n);
+        } else {
+            list = userDaoImal.queryMessList0(id);
+            for (int i=n;i>0;i--) {
+                list.remove(0);
+            }
+        }
         if (list.size() != 0) {
             Gson gson = new Gson();
             result = gson.toJson(list);
@@ -32,7 +40,6 @@ public class MessServlet extends HttpServlet {
         }
         resp.setCharacterEncoding("utf-8");
         resp.getWriter().append(result);
-        GetData getData = new GetData();
-        getData.getData(req);
+        GetData.getData(req);
     }
 }

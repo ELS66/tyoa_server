@@ -8,6 +8,7 @@ public class User {
     private int day;
     private String token;
 
+
     public User(int id, String username, String password, int root, int day, String token) {
         this.id = id;
         this.username = username;

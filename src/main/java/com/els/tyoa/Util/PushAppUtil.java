@@ -7,7 +7,7 @@ import com.tencent.xinge.push.app.PushAppRequest;
 import java.util.ArrayList;
 
 public class PushAppUtil {
-    public static void pushapp(String title,String content,ArrayList<String> tokenlist) {
+    public static void pushapp(String title,String content,ArrayList<String> tokenlist,String str,String str2) {
         XingeApp xingeApp = new XingeApp.Builder()
                 .appId(String.valueOf(1500016801))
                 .secretKey("72c0f65b7cf73fa4c32524e81e73c0a3")
@@ -23,10 +23,10 @@ public class PushAppUtil {
         ClickAction clickAction = new ClickAction();
         message.setTitle(title);
         message.setContent(content);
-        clickAction.setIntent("xgscheme://com.tpns.push/notify_detail?param1=leave");
+        clickAction.setIntent("xgscheme://com.tpns.push/notify_detail?param1=" + title + "&param2=" + str + "&param3=" + str2);
         clickAction.setAction_type(3);
         messageAndroid.setAction(clickAction);
-
+        //messageAndroid.setCustom_content(custom_content);
         message.setAndroid(messageAndroid);
         pushAppRequest.setMessage(message);
         pushAppRequest.setToken_list(tokenlist);

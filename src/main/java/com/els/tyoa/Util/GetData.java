@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class GetData {
-    public String getData(HttpServletRequest req){
+    public static String getData(HttpServletRequest req){
         String result = null;
         try {
             //包装request的输入流
@@ -20,7 +20,6 @@ public class GetData {
             }
             br.close();//关闭缓冲流
             result=sb.toString();//转换成字符
-            System.out.println("result = " + result);
         } catch (Exception e) {
             e.printStackTrace();
         }

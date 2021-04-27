@@ -28,7 +28,7 @@ public class RegisterServlet extends HttpServlet {
         if (user != null) {
             result = "you";
         } else {
-            int n = userDaoImal.insertUser(username,password);
+            int n = userDaoImal.insertUser(username,0,"e10adc3949ba59abbe56e057f20f883e");
             System.out.println(n);
             if (n == 1) {
                 result = "true";
@@ -38,7 +38,6 @@ public class RegisterServlet extends HttpServlet {
         }
         resp.setCharacterEncoding("utf-8");
         resp.getWriter().append(result);
-        GetData getData = new GetData();
-        getData.getData(req);
+        GetData.getData(req);
     }
 }
